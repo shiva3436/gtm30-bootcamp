@@ -1,0 +1,199 @@
+# 🚀 Day 02 - CRM Foundation with HubSpot
+
+## Objective
+
+The objective of Day 2 was to understand why a Customer Relationship Management (CRM) platform is the foundation of every Go-To-Market (GTM) system and how it acts as the single source of truth for customer and revenue data.
+
+Rather than simply learning how to use HubSpot, the focus was on understanding how a GTM Engineer models business data, customizes CRM objects, and prepares the CRM for automation.
+
+---
+
+# Learning Outcomes
+
+During today's learning, I explored the core architecture of HubSpot CRM and understood how different business entities are represented.
+
+## CRM Objects
+
+### Contact
+
+Represents an individual person interacting with the business.
+
+Example Properties:
+- Full Name
+- Work Email
+- Phone Number
+- Job Title
+
+---
+
+### Company
+
+Represents the organization associated with one or more contacts.
+
+Example Properties:
+- Company Name
+- Industry
+- Employee Count
+- Annual Revenue
+- Website
+
+---
+
+### Deal
+
+Represents a potential sales opportunity.
+
+Example Properties:
+- Deal Name
+- Pipeline Stage
+- Deal Value
+- Expected Close Date
+- Deal Owner
+
+---
+
+# Sales Pipeline
+
+A custom sales pipeline was designed to represent the customer journey from first interaction to conversion.
+
+```
+New Lead
+    ↓
+Qualified
+    ↓
+Demo Scheduled
+    ↓
+Proposal Sent
+    ↓
+Negotiation
+    ↓
+Closed Won
+    ↓
+Closed Lost
+```
+
+This pipeline helps Sales teams understand where every opportunity is in the buying journey and improves revenue forecasting.
+
+---
+
+# Custom CRM Properties
+
+The following custom properties were created inside HubSpot.
+
+| Property | Type | Purpose |
+|----------|------|---------|
+| Lead Score | Number | Represents the quality of a lead based on business rules |
+| Product Interest | Dropdown | Stores the product or solution the prospect is interested in |
+| AI Summary | Multi-line Text | Stores AI-generated customer insights |
+| Demo Priority | Dropdown | Helps prioritize demo scheduling |
+| Lead Source | Dropdown | Identifies where the lead originated |
+
+---
+
+# Why Custom Properties Matter
+
+Every business has unique processes and data requirements.
+
+Custom properties allow the CRM to store business-specific information that can later be used for:
+
+- Workflow Automation
+- Lead Qualification
+- Reporting
+- AI Personalization
+- Sales Prioritization
+- Customer Segmentation
+
+---
+
+# Key Concepts Learned
+
+## CRM as a Single Source of Truth
+
+A CRM is not simply a contact database.
+
+It acts as the centralized system where Sales, Marketing, Customer Success, and Revenue Operations access consistent customer information.
+
+---
+
+## Data Enrichment
+
+Not all customer information is collected from forms.
+
+Additional business information can be enriched using external providers such as Apollo or Clay.
+
+Examples include:
+
+- Company Size
+- Industry
+- Revenue
+- Funding Stage
+- Technologies Used
+- Decision Maker Information
+
+---
+
+## AI in GTM
+
+Artificial Intelligence should generate insights rather than perform business actions.
+
+Example outputs include:
+
+- Customer Summary
+- Personalized Email Draft
+- Discovery Questions
+- Sales Preparation Notes
+- Meeting Summary
+
+Business actions such as assigning leads or scheduling meetings should be handled through workflow automation.
+
+---
+
+## GTM Engineering Principles
+
+For every workflow designed, I learned to ask:
+
+1. Where does the data originate?
+2. Where is the data stored?
+3. Who consumes the data?
+4. Which business decisions can be automated?
+5. How are failures handled?
+6. How can manual effort be reduced?
+
+---
+
+# Business Takeaways
+
+A GTM Engineer is responsible for designing systems that improve revenue operations rather than simply automating tasks.
+
+The CRM becomes the foundation for:
+
+- Lead Management
+- AI Workflows
+- Revenue Analytics
+- Customer Lifecycle Tracking
+- Sales Automation
+- Customer Success Operations
+
+---
+
+# Challenges Faced
+
+- Understanding CRM object relationships.
+- Identifying which information belongs to Contact, Company, and Deal objects.
+- Designing business-specific custom properties rather than generic CRM fields.
+
+---
+
+# Key Learnings
+
+- A CRM should always act as the single source of truth.
+- Good CRM architecture simplifies automation.
+- Data quality directly impacts Sales efficiency.
+- Custom properties allow businesses to build scalable GTM systems.
+- Automation should support business processes rather than replace business decisions.
+
+---
+
+# Next Steps
+
+On Day 3, this CRM will be connected with n8n to build the first production-ready GTM automation workflow, enabling automatic lead prioritization and CRM updates.
