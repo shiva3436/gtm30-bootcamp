@@ -1,0 +1,107 @@
+Day 3 – AI Lead Qualification Agent
+Objective
+
+Build an AI-powered Lead Qualification Agent using n8n and OpenAI. The goal is to automate the first step of the sales process by analyzing inbound leads and generating structured outputs that can be consumed by CRM systems and downstream automations.
+
+Problem
+
+Sales teams spend significant time manually reviewing inbound leads to determine:
+
+Whether the lead is qualified
+How quickly they should be contacted
+Which representative should own the lead
+What personalized outreach should be sent
+
+This manual process is inconsistent, slow, and difficult to scale.
+
+Solution
+
+Developed an AI-powered workflow that accepts lead information, analyzes it using OpenAI, and returns structured JSON containing qualification data.
+
+Workflow
+Manual Trigger
+      ↓
+Edit Fields
+      ↓
+OpenAI AI Agent
+      ↓
+Structured JSON Output
+Technologies Used
+n8n
+OpenAI
+JSON
+Prompt Engineering
+Sample Input
+{
+  "firstname": "Shiva",
+  "lastname": "Kumar",
+  "company": "Microsoft",
+  "jobtitle": "Product Manager",
+  "industry": "SaaS",
+  "employees": 1200,
+  "country": "India"
+}
+Sample Output
+{
+  "lead_score": 100,
+  "priority": "High",
+  "product_interest": [
+    "Product Analytics",
+    "Feature Flags",
+    "Experimentation",
+    "Customer Feedback"
+  ],
+  "demo_priority": "P1",
+  "next_best_action": "Book Discovery Call",
+  "personalized_email_subject": "Unlocking New Opportunities with [Your Product] at Microsoft",
+  "personalized_email_intro": "Hi Shiva, I’m excited to connect with a Product Manager at Microsoft’s SaaS division...",
+  "ai_summary": "High-value enterprise lead with strong buying potential."
+}
+Business Logic
+
+The AI evaluates the lead using predefined scoring rules.
+
+Lead Score
+Company size
+Job title seniority
+Industry relevance
+Geographic market
+Enterprise status
+
+Maximum score: 100
+
+Priority Levels
+Score	Priority
+80–100	High
+50–79	Medium
+Below 50	Low
+Demo Priority
+Level	SLA
+P1	Contact within 24 hours
+P2	Contact within 3 days
+P3	Contact within 7 days
+Skills Demonstrated
+AI Prompt Engineering
+Workflow Automation
+Structured JSON Generation
+Lead Qualification Logic
+Sales Process Automation
+GTM System Design
+Future Improvements
+Replace manual input with a webhook.
+Integrate Apollo for lead discovery.
+Use Clay for enrichment.
+Update HubSpot automatically.
+Send Slack notifications for high-priority leads.
+Trigger personalized email campaigns.
+Store qualified leads in PostgreSQL.
+Build an executive dashboard.
+Key Learnings
+AI responses should always be structured for downstream systems.
+Standardized JSON enables reliable automation.
+Prompt engineering significantly impacts output quality.
+Business rules should be explicit rather than inferred by the model.
+AI is most valuable when embedded into operational workflows.
+Portfolio Value
+
+This project demonstrates how AI can automate lead qualification, prioritize inbound opportunities, and reduce manual effort for Sales and Revenue Operations teams. It serves as the foundation for a larger GTM automation platform that will integrate CRM, enrichment tools, messaging platforms, and analytics.
